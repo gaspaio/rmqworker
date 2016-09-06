@@ -1,0 +1,20 @@
+{
+  "command": "echo",
+  "logging": {
+    "tofile": {
+      "type": "file",
+      "level": "info",
+      "format": "fmt string/JSON/TERMINAL"
+    },
+    "syslog": {
+      "type": "syslog",
+      "level": "critical",
+      "format": "fmt str"
+    },
+    "stdout": {
+      "type": "stream",
+      "level": "debug",
+      "format": "fmt str"
+    }
+  }
+}
