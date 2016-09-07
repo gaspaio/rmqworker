@@ -22,11 +22,10 @@ func main() {
 	app.Action = func(c *cli.Context) error {
 		fmt.Println("hello world")
 
-		if "" == c.String("config-file") {
-			return cli.NewExitError("No config file specified (use --help for ... help)", 1)
+		if err := InitConfig(c.String("config-file")); err != nil {
+			return cli.NewExitError(err.Error(), 1)
 		}
 
-		fmt.Printf(c.String("config-file"))
 		return nil
 	}
 
